@@ -12,7 +12,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -42,6 +44,9 @@ public class Usuario {
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     @JsonManagedReference
     private Pedido pedido;
+
+    @NotNull
+    private BigDecimal renda = BigDecimal.ZERO;
 
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
@@ -81,5 +86,13 @@ public class Usuario {
 
     public String getTelefone() {
         return telefone;
+    }
+
+    public BigDecimal getRenda() {
+        return renda;
+    }
+
+    public void setRenda(BigDecimal renda) {
+        this.renda = renda;
     }
 }

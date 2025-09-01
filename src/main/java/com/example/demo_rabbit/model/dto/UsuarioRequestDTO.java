@@ -29,6 +29,17 @@ public class UsuarioRequestDTO {
     @NotNull(message = "O valor deve ser preechido")
     private BigDecimal valorSolicitado;
 
+    @NotNull(message = "O valor da renda deve ser preechido")
+    private BigDecimal renda;
+
+    public void setRenda(BigDecimal renda) {
+        this.renda = renda;
+    }
+
+    public BigDecimal getRenda() {
+        return renda;
+    }
+
     public String getCpf() {
         return cpf;
     }

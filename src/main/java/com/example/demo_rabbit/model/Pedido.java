@@ -37,7 +37,7 @@ public class Pedido {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dataDeSolicitacao;
 
-    private boolean isPendente = true;
+    private boolean isPendente;
 
     private boolean isAprovado;
 

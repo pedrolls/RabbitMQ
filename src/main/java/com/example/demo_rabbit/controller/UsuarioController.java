@@ -1,9 +1,12 @@
 package com.example.demo_rabbit.controller;
 
 import com.example.demo_rabbit.model.dto.UsuarioRequestDTO;
+import com.example.demo_rabbit.model.dto.UsuarioResponseDTO;
 import com.example.demo_rabbit.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +19,8 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @PostMapping("/salvar-usuario")
-    public void salvarUsuario(@RequestBody @Valid UsuarioRequestDTO usuarioRequestDTO) {
-        this.usuarioService.salvarUsuario(usuarioRequestDTO);
-
+    @PostMapping("/salvar-novo-pedido")
+    public ResponseEntity<UsuarioResponseDTO> salvarUsuario(@RequestBody @Valid UsuarioRequestDTO usuarioRequestDTO) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.usuarioService.salvarUsuario(usuarioRequestDTO));
     }
 }

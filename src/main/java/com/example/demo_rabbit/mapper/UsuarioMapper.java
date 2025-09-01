@@ -2,7 +2,7 @@ package com.example.demo_rabbit.mapper;
 
 import com.example.demo_rabbit.model.Usuario;
 import com.example.demo_rabbit.model.dto.UsuarioRequestDTO;
-import org.aspectj.lang.annotation.After;
+import com.example.demo_rabbit.model.dto.UsuarioResponseDTO;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -16,7 +16,10 @@ public interface UsuarioMapper {
 
     UsuarioMapper INSTANCE = Mappers.getMapper(UsuarioMapper.class);
 
-//    UsuarioRequestDTO convertUsuarioToUsuarioDTO(Usuario usuario);
+    @Mapping(target = "pedidoId", source = "pedido.id")
+    @Mapping(target = "valorSolicitado", source = "pedido.valorSolicitado")
+    @Mapping(target = "dataDeSolicitacao", source = "pedido.dataDeSolicitacao")
+    UsuarioResponseDTO convertUsuarioToUsuarioResponseDTO(Usuario usuario);
 
     @Mapping(target = "pedido.valorSolicitado", source = "valorSolicitado")
     Usuario convertUsuarioDTOToUsuario(UsuarioRequestDTO usuarioRequestDTO);
