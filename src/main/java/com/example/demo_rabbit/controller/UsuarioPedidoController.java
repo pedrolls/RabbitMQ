@@ -2,7 +2,7 @@ package com.example.demo_rabbit.controller;
 
 import com.example.demo_rabbit.model.dto.UsuarioRequestDTO;
 import com.example.demo_rabbit.model.dto.UsuarioResponseDTO;
-import com.example.demo_rabbit.service.UsuarioService;
+import com.example.demo_rabbit.service.UsuarioPedidoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class UsuarioController {
+public class UsuarioPedidoController {
 
     @Autowired
-    private UsuarioService usuarioService;
+    private UsuarioPedidoService usuarioPedidoService;
 
     @PostMapping("/salvar-novo-pedido")
     public ResponseEntity<UsuarioResponseDTO> salvarUsuarioEPedido(@RequestBody @Valid UsuarioRequestDTO usuarioRequestDTO) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(this.usuarioService.salvarUsuarioEPedido(usuarioRequestDTO));
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.usuarioPedidoService.salvarUsuarioEPedido(usuarioRequestDTO));
     }
 }
