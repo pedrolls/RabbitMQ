@@ -20,7 +20,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping("/salvar-novo-pedido")
-    public ResponseEntity<UsuarioResponseDTO> salvarUsuario(@RequestBody @Valid UsuarioRequestDTO usuarioRequestDTO) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(this.usuarioService.salvarUsuario(usuarioRequestDTO));
+    public ResponseEntity<UsuarioResponseDTO> salvarUsuarioEPedido(@RequestBody @Valid UsuarioRequestDTO usuarioRequestDTO) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.usuarioService.salvarUsuarioEPedido(usuarioRequestDTO));
     }
 }

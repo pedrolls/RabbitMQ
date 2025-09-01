@@ -16,7 +16,7 @@ public class UsuarioService {
 
     private RabbitMqService rabbitMqService;
 
-    public UsuarioResponseDTO salvarUsuario(UsuarioRequestDTO usuarioRequestDTO) {
+    public UsuarioResponseDTO salvarUsuarioEPedido(UsuarioRequestDTO usuarioRequestDTO) {
 
         Usuario usuario = UsuarioMapper.INSTANCE.convertUsuarioDTOToUsuario(usuarioRequestDTO);
 
