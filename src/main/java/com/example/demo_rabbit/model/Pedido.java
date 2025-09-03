@@ -41,6 +41,8 @@ public class Pedido {
 
     private boolean isAprovado;
 
+    private boolean isAnalisado;
+
     public void setId(int id) {
         this.id = id;
     }
@@ -87,5 +89,13 @@ public class Pedido {
 
     public boolean isAprovado() {
         return isAprovado;
+    }
+
+    public boolean isAnalisado() {
+        return isAnalisado;
+    }
+
+    public void setAnalisado(boolean analisado) {
+        isAnalisado = analisado;
     }
 }
