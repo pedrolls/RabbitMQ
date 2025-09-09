@@ -1,1 +1,1 @@
-Exemplo de projeto usando Spring Boot usando o serviço de messageria do RabbitMQ
+Exemplo de projeto usando Spring Boot com o serviço de messageria do RabbitMQ
